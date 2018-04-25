@@ -12,20 +12,37 @@ import java.text.DecimalFormat;
 
 public class Bmi extends AppCompatActivity implements View.OnClickListener {
 
+    EditText field_height;
+    EditText field_weight;
+    TextView result;
+    TextView suggest;
+    Button submit;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_bmi);
-        Button submit = findViewById(R.id.submit);
+        findViews();
+        Listener();
+
+    }
+
+    private void findViews() { //導向物件欄位位置，注意名稱一定要相同
+        submit = findViewById(R.id.submit);
+        field_height = findViewById(R.id.field_height);
+        field_weight = findViewById(R.id.field_weight);
+        result = findViewById(R.id.result);
+        suggest = findViewById(R.id.suggest);
+    }
+
+    private void Listener(){
         submit.setOnClickListener(this);
     }
+
 
     @Override
     public void onClick(View v) {
         DecimalFormat df = new DecimalFormat("0.00");
-
-        EditText field_height = findViewById(R.id.field_height);
-        EditText field_weight = findViewById(R.id.field_weight);
 
         double height = Double.parseDouble(field_height.getText().toString()) / 100;
         double weight = Double.parseDouble(field_weight.getText().toString());
