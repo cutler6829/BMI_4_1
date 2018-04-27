@@ -74,7 +74,7 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
     DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
-            System.out.println("已下確認鍵");        }
+            System.out.println("已下確認鍵了");        }
     };
 }
 
