@@ -38,7 +38,7 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
         suggest = findViewById(R.id.suggest);
     }
 
-    private void setMyListener(){
+    private void setMyListener() {
         submit.setOnClickListener(this);
     }
 
@@ -64,26 +64,28 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
         openOptionsDialog();
 
     }
-    void openOptionsDialog(){
-        AlertDialog.Builder builder= new AlertDialog.Builder(this);
+
+    void openOptionsDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setTitle("Android BMI");
         builder.setMessage("Android BMI Calculator");
-        builder.setPositiveButton("確認",dialogListener);
-        builder.setNegativeButton("取消",dialogListener);
-        builder.setNeutralButton("其他",dialogListener);
+        builder.setPositiveButton("確認", dialogListener);
+        builder.setNegativeButton("取消", dialogListener);
+        builder.setNeutralButton("其他", dialogListener);
         builder.show();
 
     }
-    DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
+
+    DialogInterface.OnClickListener dialogListener = new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
-            switch (which){
+            switch (which) {
                 case DialogInterface.BUTTON_POSITIVE:
                     System.out.println("已下確認鍵了");
-                break;
+                    break;
                 case DialogInterface.BUTTON_NEGATIVE:
                     System.out.println("已下取消鍵了");
-                break;
+                    break;
                 case DialogInterface.BUTTON_NEUTRAL:
                     System.out.println("已下其他鍵");
 
@@ -96,7 +98,8 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
     };
     DialogInterface.OnClickListener dialogListener2=new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
-            System.out.println("已下其他鍵了");        */}
+            System.out.println("已下其他鍵了");        */
+        }
     };
 
 
