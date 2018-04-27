@@ -4,6 +4,7 @@ import android.content.DialogInterface;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.SoundEffectConstants;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -68,23 +69,34 @@ public class Bmi extends AppCompatActivity implements View.OnClickListener {
         builder.setTitle("Android BMI");
         builder.setMessage("Android BMI Calculator");
         builder.setPositiveButton("確認",dialogListener);
-        builder.setNegativeButton("取消",dialogListener1);
-        builder.setNeutralButton("其他",dialogListener2);
+        builder.setNegativeButton("取消",dialogListener);
+        builder.setNeutralButton("其他",dialogListener);
         builder.show();
 
     }
     DialogInterface.OnClickListener dialogListener=new DialogInterface.OnClickListener() {
         @Override
         public void onClick(DialogInterface dialog, int which) {
-            System.out.println("已下確認鍵了");        }
-    };
+            switch (which){
+                case DialogInterface.BUTTON_POSITIVE:
+                    System.out.println("已下確認鍵了");
+                break;
+                case DialogInterface.BUTTON_NEGATIVE:
+                    System.out.println("已下取消鍵了");
+                break;
+                case DialogInterface.BUTTON_NEUTRAL:
+                    System.out.println("已下其他鍵");
+
+            }
+
+    /*};
     DialogInterface.OnClickListener dialogListener1=new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
             System.out.println("已下取消鍵了");        }
     };
     DialogInterface.OnClickListener dialogListener2=new DialogInterface.OnClickListener() {
         public void onClick(DialogInterface dialog, int which) {
-            System.out.println("已下其他鍵了");        }
+            System.out.println("已下其他鍵了");        */}
     };
 
 
